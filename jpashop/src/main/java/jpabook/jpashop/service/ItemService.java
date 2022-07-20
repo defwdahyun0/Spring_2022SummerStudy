@@ -23,7 +23,7 @@ public class ItemService {
 
     // merge보다 변경감지의 방법 쓰는 것이 안전. Merge는 데이터가 null이 될 가능성이 높다.
     @Transactional
-    public Item updateItem(Long itemId, String name, int price, int stockQuantity){
+    public void updateItem(Long itemId, String name, int price, int stockQuantity){
         // 단발성 업데이트하면 안된다.
         // findItem.change(price, name, stockQunatity); // 의미있는 데이터 찾기
         Item findItem = itemRepository.findOne(itemId);
